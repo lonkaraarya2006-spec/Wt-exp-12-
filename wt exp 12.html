@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Resume</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#fff; --accent:#0b74de; --text:#111;
+      --muted:#556; --radius:10px;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;
+      padding:24px;
+    }
+
+    .wrap{
+      max-width:var(--maxw); margin:0 auto;
+      display:grid; grid-template-columns: 1fr 320px; gap:20px;
+    }
+
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:20px;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+
+    header.card{
+      grid-column: 1 / -1; display:flex; gap:18px; align-items:center;
+    }
+
+    .avatar{
+      width:96px; height:96px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#6bb3ff);
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:28px;
+      flex: 0 0 96px;
+    }
+
+    .title h1{ margin:0; font-size:22px; }
+    .title p{ margin:6px 0 0; color:var(--muted); font-size:14px; }
+
+    .section-title{ font-weight:700; color:var(--accent); margin-bottom:8px; font-size:13px; }
+    .summary{ font-size:14px; color:#222; line-height:1.45; }
+
+    /* Left column content */
+    .left .block{ margin-bottom:14px; }
+
+    .experience .job{
+      margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #f0f2f6;
+    }
+    .job .job-title{ font-weight:700; }
+    .job .job-meta{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+    .skills { display:flex; flex-wrap:wrap; gap:8px; }
+    .skill { background:#f1f6ff; color: #0b4f9a; padding:6px 8px; border-radius:999px; font-size:13px; }
+
+    /* Right column */
+    .right .contact-item{ font-size:14px; margin-bottom:10px; color:#222; }
+    .right .edu{ margin-bottom:12px; }
+    .project{ margin-bottom:10px; font-size:14px; }
+
+    /* Print */
+    @media print{
+      body{ background:white; padding:0; }
+      .wrap{ box-shadow:none; max-width:100%; grid-template-columns: 1fr 300px; }
+      .card{ box-shadow:none; border-radius:0; padding:12px; }
+    }
+
+    /* Mobile */
+    @media (max-width:880px){
+      .wrap{ grid-template-columns: 1fr; padding-bottom:30px; }
+      .avatar{ width:72px; height:72px; font-size:22px }
+    }
+    /* small utilities */
+    .muted{ color:var(--muted); font-size:13px }
+    a{ color:var(--accent); text-decoration:none }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="card">
+      <div class="avatar" aria-hidden="true">YN</div>
+      <div class="title">
+        <h1>Your Name</h1>
+        <p class="muted">Frontend Developer • JavaScript • HTML & CSS</p>
+        <p style="margin-top:8px" class="muted">Location — City, Country • <a href="mailto:you@example.com">you@example.com</a> • <a href="https://yourwebsite.example" target="_blank">yourwebsite.example</a></p>
+      </div>
+    </header>
+
+    <!-- Left column -->
+    <main class="card left">
+      <div class="block">
+        <div class="section-title">Profile</div>
+        <div class="summary">
+          A short 1–2 sentence summary about you. Example: "Creative frontend developer with 2 years of experience building responsive web apps. I care about fast UIs, clear code, and great UX."
+        </div>
+      </div>
+
+      <div class="block experience">
+        <div class="section-title">Experience</div>
+
+        <div class="job">
+          <div class="job-title">Frontend Developer — Company A</div>
+          <div class="job-meta">Jan 2024 — Present • Remote</div>
+          <div class="muted" style="margin-top:8px">
+            - Built responsive single-page apps using HTML, CSS, and Vanilla JS.<br>
+            - Optimized bundle size and improved page load by 30%.
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Web Intern — Company B</div>
+          <div class="job-meta">Jun 2023 — Dec 2023</div>
+          <div class="muted" style="margin-top:8px">
+            - Implemented designs and interactive components; improved accessibility and cross-browser support.
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="section-title">Projects</div>
+
+        <div class="project">
+          <strong>Project One</strong> — small description. <a href="#">Live</a> • <a href="#">Code</a>
+        </div>
+
+        <div class="project">
+          <strong>Project Two</strong> — small description. <a href="#">Live</a> • <a href="#">Code</a>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="section-title">Skills</div>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Responsive Design</div>
+          <div class="skill">Git</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right column -->
+    <aside class="card right">
+      <div class="block contact">
+        <div class="section-title">Contact</div>
+        <div class="contact-item"><strong>Email:</strong> you@example.com</div>
+        <div class="contact-item"><strong>Phone:</strong> +91 98765 43210</div>
+        <div class="contact-item"><strong>Website:</strong> <a href="#">yourwebsite.example</a></div>
+        <div class="contact-item"><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/yourname</a></div>
+      </div>
+
+      <div class="block edu">
+        <div class="section-title">Education</div>
+        <div><strong>B.Sc. in Computer Science</strong></div>
+        <div class="muted">University Name — 2021</div>
+      </div>
+
+      <div class="block">
+        <div class="section-title">Languages</div>
+        <div class="muted">English (Fluent), Hindi (Native)</div>
+      </div>
+
+      <div class="block">
+        <div class="section-title">Extras</div>
+        <div class="muted">Open-source contributor • Blog writer • Volunteer</div>
+      </div>
+    </aside>
+
+  </div>
+
+</body>
+</html>
